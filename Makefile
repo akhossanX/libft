@@ -6,7 +6,7 @@
 #    By: akhossan <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/30 15:55:08 by akhossan          #+#    #+#              #
-#    Updated: 2019/04/05 15:18:46 by akhossan         ###   ########.fr        #
+#    Updated: 2019/04/05 15:25:57 by akhossan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,20 +16,18 @@ CFLAGS		=	-Werror -Wall -Wextra
 
 SRC			=	$(wildcard *.c)
 
-OBJS		=	$(wildcard SRC:.c=.o)
-
-OBJS_DIR	=	objs/	
+OBJS_DIR	=	objs/
 
 all:$(NAME)
 
 $(NAME):
 	gcc -c $(CFLAGS) -I. $(SRC)
-	mv $(OBJS) $(OBJS_DIR)
-	ar rc $(NAME) $(OBJS)
+	mv *.o $(OBJS_DIR)
+	ar rc $(NAME) $(OBJS_DIR)*
 	ranlib $(NAME)
 
 clean:
-	/bin/rm -f $(OBJS)
+	/bin/rm -f $(OBJS_DIR)*
 
 fclean: clean
 	/bin/rm -f $(NAME)
