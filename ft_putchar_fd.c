@@ -6,7 +6,7 @@
 /*   By: akhossan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 14:52:37 by akhossan          #+#    #+#             */
-/*   Updated: 2019/04/04 19:38:57 by akhossan         ###   ########.fr       */
+/*   Updated: 2019/04/09 15:00:54 by akhossan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void		ft_putchar_fd(char c, int fd)
 {
-	if (fd < 0)
+	if (fd <= 0)
 		return ;
 	write(fd, &c, sizeof(c));
 }
